@@ -19,9 +19,7 @@ func convention() (int, byte){
 	var sum4 byte = byte(bx) + b
 	return sum3, sum4
 }
-
-func main() {
-	fmt.Println(convention())
+func checkForConst() {
 	const y = "hello"
 
 	fmt.Println(x)
@@ -32,4 +30,36 @@ func main() {
 
 	fmt.Println(x)
 	fmt.Println(y)
+}
+
+func exercise1() {
+	var i int = 10
+	var f float64
+	f = i 
+	fmt.Println(i, f)
+}
+func exercise2() {
+	const value = 10
+	var i int = value
+	var f float64 = value
+	fmt.Println(i, f)
+}
+func exercise3() {
+	var b byte = 255
+	var smallI int32 = 2147483647
+	var bigI int64 =  9223372036854775807
+	b += 1
+	smallI += 1
+	bigI += 1
+	fmt.Println(b, smallI, bigI)
+}
+
+func main() {
+	fmt.Println(convention())
+	checkForConst()
+	exercise1()
+	exercise2()
+	exercise3()
+
+
 }
