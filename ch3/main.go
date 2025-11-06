@@ -2,7 +2,6 @@ package main
 
 import "fmt"
 
-
 func sliceOfSlice() {
 	x := make([]string, 0, 5)
 	x = append(x, "a", "b", "c", "d")
@@ -64,15 +63,57 @@ func stringToByteAndRune() {
 	/// take care when converting int to string
 	var x int = 65
 	var y = string(x)
-	fmt.Printf("%v",y)
+	fmt.Printf("%v", y)
+}
+
+func exercise1() {
+	greeting := []string{"Hello", "Hola", "नमस्कार", "こんにちは", "Привіт"}
+	sbg1 := greeting[:2]
+	sbg2 := greeting[1:5]
+	sbg3 := greeting[3:5]
+	fmt.Println(sbg1, sbg2, sbg3)
+
+}
+
+func exercise2() {
+	var message string = "Hi 📚 📚 📚"
+	var fm []rune = []rune(message)
+	fmt.Println(string(fm[3]))
+
+}
+
+func exercise3() {
+	type Employee struct {
+		firstName string
+		lastName  string
+		id        int
+	}
+	emp1 := Employee{
+		"maghsood",
+		"esmaeili",
+		1,
+	}
+	emp2 := Employee{
+		firstName: "ghazal",
+		lastName:  "razani",
+		id:        2,
+	}
+	var emp3 Employee
+	emp3.firstName = "dsss"
+	emp3.lastName = "sdf"
+	emp3.id = 3
+	fmt.Println(emp1)
+	fmt.Println(emp2)
+	fmt.Println(emp3)
+
 }
 func main() {
+	exercise3()
 	// arraySliceCreation()
 	// sliceOfSlice()
 	// copySliceAndArray()
 	// convertArrayToSlice()
 	// convertSliceToArray()
 	// stringToByteAndRune()
-	
 
 }
