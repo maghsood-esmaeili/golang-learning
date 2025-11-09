@@ -54,13 +54,44 @@ func loopFour() {
 		fmt.Println(v)
 	}
 }
+
+func switchTest() {
+	words := []string{"a", "cow", "smile", "gopher",
+		"octopus", "anthropologist"}
+	for _, word := range words {
+		switch wordLen := len(word); wordLen {
+		case 1, 2, 3:
+			fmt.Println(word, "the word is too short ...")
+		case 4, 5, 6:
+			
+		default:
+			fmt.Println(word, "the word is too big ...")
+		}
+	}
+}
+
+func labeledLoop(){
+	samples := []string{"hello", "apple_π!"}
+	outer:
+		for _, sample := range samples {
+			for i, r := range sample {
+				fmt.Println(i, r, string(r))
+				if r == 'l' {
+					break outer
+				}
+			}
+			fmt.Println()
+		}
+}
 func main() {
 
-	shadowing()
-	conditionGo()
-	loopOne()
-	loopTwo()
-	loopThree()
-	loopFour()
+	// shadowing()
+	// conditionGo()
+	// loopOne()
+	// loopTwo()
+	// loopThree()
+	// loopFour()
+	// switchTest()
+	labeledLoop()
 
 }
