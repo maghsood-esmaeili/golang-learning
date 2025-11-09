@@ -63,26 +63,58 @@ func switchTest() {
 		case 1, 2, 3:
 			fmt.Println(word, "the word is too short ...")
 		case 4, 5, 6:
-			
+
 		default:
 			fmt.Println(word, "the word is too big ...")
 		}
 	}
 }
 
-func labeledLoop(){
+func labeledLoop() {
 	samples := []string{"hello", "apple_π!"}
-	outer:
-		for _, sample := range samples {
-			for i, r := range sample {
-				fmt.Println(i, r, string(r))
-				if r == 'l' {
-					break outer
-				}
+outer:
+	for _, sample := range samples {
+		for i, r := range sample {
+			fmt.Println(i, r, string(r))
+			if r == 'l' {
+				break outer
 			}
-			fmt.Println()
 		}
+		fmt.Println()
+	}
 }
+
+func labeledBreak() {
+exitlabel:
+	for i := 0; i < 10; i++ {
+		switch i {
+		case 0, 2, 4, 6:
+			fmt.Println(i, " is even")
+		case 3:
+			fmt.Println(i, " is divisible by 3 but not 2")
+		case 7:
+			fmt.Println(i, " exit the loop!")
+			break exitlabel
+		default:
+			fmt.Println(i, " is boring ...")
+		}
+	}
+}
+
+func blankSwitch() {
+	samples := []string{"hello", "apple_1!", "undrestanting"}
+	for _, sample := range samples {
+		switch lenSample := len(sample); {
+		case lenSample < 5:
+			fmt.Println(sample, "word is short")
+		case lenSample > 10:
+			fmt.Println(sample, "word is long")
+		default:
+			fmt.Println(sample, "this is my word...")
+		}
+	}
+}
+
 func main() {
 
 	// shadowing()
@@ -92,6 +124,8 @@ func main() {
 	// loopThree()
 	// loopFour()
 	// switchTest()
-	labeledLoop()
+	// labeledLoop()
+	// labeledBreak()
+	blankSwitch()
 
 }
