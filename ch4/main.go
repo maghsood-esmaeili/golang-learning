@@ -143,6 +143,41 @@ func safeGoTo() {
 		fmt.Println("do complicated stuff no matter why we left the loop")
 		fmt.Println(a)
 }
+func exercise1() {
+	var randSlice []int
+	for i:=0; i< 100; i ++ {
+		randSlice = append(randSlice, rand.Intn(100))
+	}
+	fmt.Println(randSlice)
+}
+
+func exercise2() {
+	var randSlice []int
+	for i:=0; i< 100; i ++ {
+		randSlice = append(randSlice, rand.Intn(100))
+	}
+	for _, randomNumber := range randSlice {
+		switch  {
+		case randomNumber %2 == 0:
+			fmt.Println("Two")
+		case randomNumber %3 == 0:
+			fmt.Println("Three")
+		case randomNumber % 3 == 0 && randomNumber %2 == 0:
+			fmt.Println("Six")
+		default:
+			fmt.Println("Never mind")
+		}
+	}
+}
+
+func exercise3() {
+	var total int
+	for i:= 0; i < 10; i++ {
+		total := total + i
+		fmt.Println(total)
+	}
+	fmt.Println(total)
+}
 func main() {
 
 	// shadowing()
@@ -156,6 +191,10 @@ func main() {
 	// labeledBreak()
 	// blankSwitch()
 	// rewriteIfElse()
-	safeGoTo()
+	// safeGoTo()
+	// exercise1()
+	// exercise2()
+	// exercise3()
+
 
 }
