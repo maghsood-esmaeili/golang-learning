@@ -115,6 +115,34 @@ func blankSwitch() {
 	}
 }
 
+func rewriteIfElse() {
+	for i := 0; i <= 100; i++ {
+		switch {
+		case i%3 == 0 && i%5 == 0:
+			fmt.Println("FizzBuzz")
+		case i%3 == 0:
+			fmt.Println("Fizz")
+		case i%5 == 0:
+			fmt.Println("Buzz")
+		default:
+			fmt.Println(i)
+		}
+	}
+}
+
+func safeGoTo() {
+	a := rand.Intn(10)
+	for a < 100 {
+		if a%5 == 0 {
+			goto done
+		}
+		a = a*2 + 1
+	}
+	fmt.Println("do something when the loop completes normally")
+	done:
+		fmt.Println("do complicated stuff no matter why we left the loop")
+		fmt.Println(a)
+}
 func main() {
 
 	// shadowing()
@@ -126,6 +154,8 @@ func main() {
 	// switchTest()
 	// labeledLoop()
 	// labeledBreak()
-	blankSwitch()
+	// blankSwitch()
+	// rewriteIfElse()
+	safeGoTo()
 
 }
